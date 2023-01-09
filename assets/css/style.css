@@ -21,14 +21,39 @@ ul {
 main {
   margin: 5vmin;
 }
-.user-card{
+.user-card {
   width: 50%;
   margin: auto;
   text-align: center;
 }
-.user-card__img{
+.user-card__img {
   height: 200px;
   clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
   object-fit: cover;
   object-position: 0 -40px;
+}
+.user-card__name {
+  position: relative;
+  margin: 20px auto;
+}
+.user-card__name::before, 
+.user-card__name::after  {
+  content: '';
+  height: 2px;
+  width: 0;
+  background: black;
+  position: absolute;
+  transition: width 3s ease;
+}
+.user-card__name::before {
+  top: 0;
+  right: 0;
+}
+.user-card__name::after {
+  bottom: 0;
+  left: 0;
+}
+.user-card:hover .user-card__name::before,
+.user-card:hover .user-card__name::after {
+  width: 100%;
 }
